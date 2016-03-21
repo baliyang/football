@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="swiper/css/swiper-3.3.1.min.css" />
+		<link rel="stylesheet" type="text/css" href="swiper/css/animate.css" />
+		<title>首页</title>
+		<style type="text/css">
+			html {
+				height: 100%;
+				background: #fff;
+				overflow: hidden;
+			}
+			
+			body {
+				margin: 0 auto;
+				width: 100%;
+				height: 100%;
+				max-width: 640px;
+				background: white;
+			}
+			
+			.left {
+				float: left;
+			}
+			
+			.header {
+				display: -webkit-box;
+				-webkit-box-align: center;
+				-webkit-box-pack: center;
+			}
+			
+			header .con {
+				width: 106px;
+				height: 22px;
+				line-height: 22px;
+				background: #57b2d7;
+				border-radius: 20px;
+				overflow: hidden;
+				font-size: 12px;
+			}
+			
+			.con >div:first-child {
+				border-top-left-radius: 50px;
+				border-bottom-left-radius: 50px;
+				float: left;
+			}
+			
+			.con >div:last-child {
+				border-top-right-radius: 50px;
+				border-bottom-right-radius: 50px;
+				float: right;
+			}
+			
+			.con >div {
+				width: 53px;
+				text-align: center;
+				position: relative;
+				overflow: hidden;
+			}
+			
+			.con >.one {
+				background: #79c1df;
+				color: #b1e4f8;
+			}
+			
+			nav {
+				width: 100%;
+				height: 34px;
+				background: white;
+				margin-bottom: 6px;
+			}
+			
+			nav >div >a.fir {
+				border-bottom: 3px solid #0f91c5;
+			}
+			
+			nav >div >a {
+				width: 33.3%;
+				height: 34px;
+				color: #b4b4b4;
+				display: inline-block;
+				font-size: 14px;
+				text-align: center;
+				line-height: 34px;
+				border-bottom: 1px solid #d9d9d9;
+				box-sizing: border-box;
+			}
+			
+			.main {
+				width: 100%;
+				min-height: 400px;
+				overflow: hidden;
+				background: #fff;
+			}
+			
+			.main >ul {
+				width: 100%;
+				overflow: hidden;
+				background: pink;
+			}
+			
+			.main >ul >li {
+				width: 48%;
+				box-sizing: border-box;
+				border: 1px solid #e5e5e5;
+				display: inline-block;
+				margin:0 0 5px 1.5% ;
+				overflow: hidden;
+			}
+			/*.main >ul >li:last-child{margin-bottom: 20px;}*/
+			.main >ul >li >img {
+				width: 100%;
+				height: auto;
+				border-bottom: 1px solid #e5e5e5;
+			}
+			
+			.main >ul >li >p {
+				padding: 8px 0 8px 12px;
+			}
+			.main >ul >.first{display: none;}
+			section {
+				width: 100%;
+			}
+			
+			.active {
+				color: #0F91C5;
+			}
+			
+			footer ul li:nth-child(3) {
+				position: relative;
+			}
+			
+			.file {
+				position: absolute;
+				width: 44px;
+				height: 44px;
+				left: 18px;
+				top: 13px;
+				opacity: 0;
+			}
+			.mainbox{width: 100%;overflow: hidden;}
+			.mainbox >div {
+				width: 100%;
+				overflow: hidden;
+				float: left;
+			}
+			
+			.name {
+				width: 100%;
+				height: 70px;
+				background: white;
+				box-sizing: border-box;
+				padding: 16px 0 0 11px;
+			}
+			
+			.name >.icon {
+				width: 49px;
+				height: 49px;
+				margin-right: 10px;
+			}
+			
+			.name >.icon >img {
+				width: 100%;
+				height: auto;
+				margin-top: -3px;
+			}
+			
+			
+			.on1 {
+				font-size: 14px;
+				margin-bottom: 10px;
+			}
+			
+			.on2 {
+				font-size: 12px;
+				color: #b4b4b4;
+			}
+			
+			.like {
+				float: right;
+				padding-right: 20px;
+			}
+			
+			.like span {
+				font-size: 12px;
+				color: #dadada;
+				margin-right: 5px;
+			}
+			
+			.like img {
+				width: 11px;
+				height: auto;
+			}
+			
+			.img {
+				clear: both;
+				width: 100%;
+			}
+			
+			.img img {
+				width: 100%;
+			}
+			
+			.img p{height: 25px;border-bottom:1px solid #CCCCCC;font-size: 14px;line-height: 25px;padding-left: 20px;box-sizing: border-box;}
+			
+			footer {
+				width: 100%;
+				height: 44px;
+				box-sizing: border-box;
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				border-top: 1px solid #E5E5E5;
+				background: #FFFFFF;
+			}
+			
+			footer >ul >li {
+				width: 20%;
+				height: 44px;
+				float: left;
+				font-size: 12px;
+				text-align: center;
+				box-sizing: border-box;
+				padding-top: 6px;
+			}
+			
+			footer >ul >li >a {
+				color: #cccccc;
+				height: 35px;
+				display: inline-block;
+			}
+			
+			footer >ul >li:nth-child(3) i {
+				font-size: 30px;
+			}
+			
+			footer >ul >li:nth-child(3) >a >div {
+				width: 44px;
+				height: 44px;
+				background: #fff;
+				border: 1px solid #E5E5E5;
+				border-radius: 50%;
+				margin: 0 auto;
+				text-align: center;
+				box-sizing: border-box;
+				padding-top: 7px;
+			}
+			
+			footer >ul >li:nth-child(3) {
+				padding: 0;
+				margin-top: -7px;
+			}
+			.swiper-container {
+				width: 100%;
+				overflow: hidden;
+			}
+			.scroll{background: yellow;}
+			.swiper-slide{width: 100%;overflow: hidden;margin-bottom: 100px;background: red;}
+			.second_atten{display: none;}
+		</style>
+	</head>
+
+	<body>
+		<header class="header">
+			<div class="con">
+				<div class="hotsport left">热点
+				</div>
+				<div class="attention one right">关注
+				</div>
+			</div>
+		</header>
+		<div class="mainbox">
+			<div class="first_hot">
+				<nav>
+					<div>
+						<a href="#" class="fir">足球现场</a><a href="#">足球生活</a><a href="#">足球美女</a>
+					</div>
+				</nav>
+				<div class="swiper-container">
+					<div class="swiper-wrapper repeat_item">
+						<div class="swiper-slide">
+							<div id="scroll1" class="scroll">
+								<div class="main">
+									<ul>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div id="scroll2" class="scroll">
+								<div class="main">
+									<ul>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div id="scroll3" class="scroll">
+								<div class="main">
+									<ul>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- 如果需要滚动条 -->
+					<!--<div class="swiper-scrollbar"></div>-->
+				</div>
+			</div>
+			<div class="second_atten" id="scroll4">
+				<ul>
+					<li>
+						<div class="name">
+							<div class="icon left">
+								<img src="img/pic5.jpg" />
+							</div>
+							<div class="introduce left">
+								<p class="on1">我叫小萌</p>
+								<p class="on2">我是小萌我怕谁！哈哈哈哈！</p>
+							</div>
+							<div class="like">
+								<span class="left">382344</span><img class="left" src="img/pic8.jpg" />
+								
+							</div>
+						</div>
+						<div class="img">
+							<img src="img/pic.jpg" />
+							<p>小丸子啊小丸子</p>
+						</div>
+					</li>
+					<li>
+						<div class="name">
+							<div class="icon left">
+								<img src="img/pic7.jpg" />
+							</div>
+							<div class="introduce left">
+								<p class="on1">Lily</p>
+								<p class="on2">Hello!My name is Lily!</p>
+							</div>
+							<div class="like">
+								<span class="left">382344</span><img class="left" src="img/pic8.jpg" />
+							</div>
+						</div>
+						<div class="img">
+							<img src="img/pic1.jpg" />
+							<p>小丸子啊小丸子</p>
+						</div>
+					</li>
+					<li>
+						<div class="name">
+							<div class="icon left">
+								<img src="img/pic5.jpg" />
+							</div>
+							<div class="introduce left">
+								<p class="on1">我叫小萌</p>
+								<p class="on2">我是小萌我怕谁！哈哈哈哈！</p>
+							</div>
+							<div class="like">
+								<span class="left">382344</span><img class="left" src="img/pic8.jpg" />
+							</div>
+						</div>
+						<div class="img">
+							<img src="img/pic3.jpg" />
+							<p>小丸子啊小丸子</p>
+						</div>
+					</li>
+					<li>
+						<div class="name">
+							<div class="icon left">
+								<img src="img/pic7.jpg" />
+							</div>
+							<div class="introduce left">
+								<p class="on1">Lily</p>
+								<p class="on2">Hello!My name is Lily!</p>
+							</div>
+							<div class="like">
+								<span class="left">382344</span><img class="left" src="img/pic8.jpg" />
+							</div>
+						</div>
+						<div class="img">
+							<img src="img/pic4.jpg" />
+							<p>小丸子啊小丸子</p>
+						</div>
+					</li>
+					<li>
+						<div class="name">
+							<div class="icon left">
+								<img src="img/pic5.jpg" />
+							</div>
+							<div class="introduce left">
+								<p class="on1">我叫小萌</p>
+								<p class="on2">我是小萌我怕谁！哈哈哈哈！</p>
+							</div>
+							<div class="like">
+								<span class="left">382344</span><img class="left" src="img/pic8.jpg" />
+							</div>
+						</div>
+						<div class="img">
+							<img src="img/pic6.jpg" />
+							<p>小丸子啊小丸子</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<footer>
+			<ul>
+				<li>
+					<a class="active home" href="#">
+						<div><i class="iconfont">&#xe67c;</i></div>首页</a>
+				</li>
+				<li>
+					<a class="discover" href="#">
+						<div><i class="iconfont">&#xf00d7;</i></div>发现</a>
+				</li>
+				<li>
+					<a href="#">
+						<div><i class="iconfont">&#xe60e;</i></div>
+						<input type="file" class="file" />
+					</a>
+				</li>
+				<li>
+					<a class="personal" href="#">
+						<div><i class="iconfont">&#xe631;</i></div>我的</a>
+				</li>
+				<li>
+					<a href="#">
+						<div><i class="iconfont">&#xe638;</i></div>退出</a>
+				</li>
+			</ul>
+		</footer>
+	</body>
+	<script type="text/javascript" src="js/iscroll.js"></script>
+	<script type="text/javascript" src="js/zepto.min.js"></script>
+	<script type="text/javascript" src="swiper/js/swiper.animate1.0.2.min.js"></script>
+	<script type="text/javascript" src="swiper/js/swiper-3.3.1.jquery.min.js"></script>
+	
+	<script type="text/javascript">
+		window.onload = function() {
+			$(".mainbox >div").eq(1).hide();
+			aja(1);
+			var mySwiper = new Swiper('.swiper-container', {
+				/*scrollbar: '.swiper-scrollbar',*/
+				updateOnImagesReady:true,
+				onInit: function(swiper) { //Swiper2.x的初始化是onFirstInit
+					swiperAnimateCache(swiper); //隐藏动画元素 
+					swiperAnimate(swiper); //初始化完成开始动画
+				},
+				onSlideChangeEnd: function(swiper) {
+					swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+					$("nav >div >a").removeClass("fir");
+					$("nav >div >a").eq(mySwiper.activeIndex).addClass("fir");
+					var u = mySwiper.activeIndex+1;
+						/*alert(u)*/
+					aja(u);
+				}
+			})
+			var scroll1, scroll2, scroll3, scroll4;
+			var wHeight = $(window).height();
+			var hHeight = $("header").height();
+			var fHeight = $("footer").height();
+			var nHeight = $("nav").height();
+			scroll1 = new iScroll("scroll1", {
+				hScrollbar: false,
+				vScrollbar: false
+			})
+			scroll2 = new iScroll("scroll2", {
+				hScrollbar: false,
+				vScrollbar: false
+			})
+			scroll3 = new iScroll("scroll3", {
+				hScrollbar: false,
+				vScrollbar: false
+			})
+			scroll4 = new iScroll("scroll4", {
+				hScrollbar: false,
+				vScrollbar: false
+			})
+			$(".scroll").height(wHeight - hHeight - fHeight - nHeight - 6);
+			$(".swiper-container").height(wHeight - hHeight - fHeight - nHeight - 6);
+			$(".swiper-slide").height(wHeight - hHeight - fHeight - nHeight - 6);
+			$(".second_atten").height(wHeight - hHeight - fHeight);
+			
+			$(".con >div").on("tap",function(){
+				var $i = $(this).index();
+				$(".con >div").addClass("one");
+				$(this).removeClass("one");
+				$(".mainbox >div").hide();
+				$(".mainbox >div").eq($i).show();
+				scroll4.refresh();
+			})
+			$("nav >div >a").on("tap",function(){
+				var $inde = $(this).index();
+				$("nav >div >a").removeClass("fir");
+				$(this).addClass("fir");
+				mySwiper.slideTo($inde, 500, false);
+				aja($inde+1);
+			})
+			
+			function aja(mn){
+				$(".main >ul > li").remove();
+				$.ajax({
+						type:"get",
+						url:"http://localhost:8080/Proxy/FootBall/tweet/json/query/hotspot.do",
+						data:{"category":mn},
+						success:function(str){
+							var Str = JSON.parse(str);
+							console.log(str);
+							if (Str.ecode==200) {
+								var num = Str.data.tweetlist;
+								for (var i = 0; i <num.length;i++) {
+									var Li = $('<li><img src="http://101.200.173.217:8080/FootBall/upload/files/20150715/'+num[i].thumbnailname+'" /><p>'+num[i].content+'</p></li>');
+									Li.appendTo("#scroll"+mn+" >.main >ul");
+									$("img")[0].onload=function(){
+										scroll1.refresh();
+										scroll2.refresh();
+										scroll3.refresh();
+									}
+								}
+							}
+						}
+					});
+			}
+			$("footer >ul >li >a").on("tap",function(){
+				$("footer >ul >li >a").removeClass("active");
+				$(this).addClass("active");
+				$(this).siblings().addClass("active");
+			})
+			$("footer >ul >li >a >.file").on("tap",function(e){
+				var ev = e || event;
+				ev.stopPropagation() ? e.stopPropagation():e.cancelBubble = false;
+				$("footer >ul >li >a").removeClass("active");
+				$(this).parent().addClass("active");
+			})
+			$(".discover").on("tap",function(){
+				window.location.href = "discover.html";
+			})
+			$(".personal").on("tap",function(){
+				window.location.href = "personal.html";
+			})
+			$(".home").on("tap",function(){
+				window.location.href = "index1.html";
+			})
+			
+		}
+	</script>
+
+</html>

@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+		<meta content="telephone=no" name="format-detection" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<title>登录</title>
+		<style type="text/css">
+			html {
+				height: 100%;
+				background: #fff;
+			}
+			
+			body {
+				margin: 0 auto;
+				width: 100%;
+				height: 100%;
+				max-width: 640px;
+				background: #fff;
+			}
+			.mot{width: 100%;height: 100%;background: rgba(0,0,0,0.6);position: absolute;top: 0;left: 0;}
+			.box{width: 200px;height: 100px;margin: 100px auto;background: white;border-radius: 10px;}
+			.warm{width: 100%;height: 50px;text-align: center;line-height: 70px;font-size: 13px;}
+			.ok{width: 50px;height: 20px;border: 1px solid #808080;margin: 10px auto;display: block;}
+		</style>
+	</head>
+
+	<body>
+		<header>足球圈子—登录</header>
+		<div class="form">
+			<input class="telnum" type="tel" placeholder="手机号" required="required" />
+			<input class="pwd" type="password" required="required" placeholder="密码" />
+			<div class="links">
+				<a href="register.html">注册</a>
+				<a class="pwd" href="forget.html">忘记密码？</a>
+			</div>
+			<button class="btn_sub" id="btn_sub">提 交</button>
+		</div>
+		<div class="mot">
+			<div class="box">
+				<div class="warm">
+					手机号输入格式不正确
+				</div>
+				<input type="button" class="ok" value="确定" />
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/zepto.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$(".mot").hide();
+			var num,pwd,reg,reg1,nam,pw;
+			 reg =/^0{0,1}(13[4-9]|15[7-9]|15[0-2]|18[7-8])[0-9]{8}$/,
+			 reg1 = /^[a-z0-9_]{6,20}$/;
+			$("#btn_sub").on("tap",function(e){
+				var ev = e || event;
+				ev.preventDefault();
+				num = $(".telnum").val()
+			 	nam = reg.test(num)
+			 	pwd = $(".pwd").val();
+			 	pw = reg1.test(pwd);
+				if (nam&&pw) {
+					$.ajax({
+						type:"get",
+						data:{"loginname":num,"password":pwd},
+						url:"http://localhost:8080/Proxy/FootBall/user/json/login.do",
+						success:function(str){
+							var jSon = JSON.parse(str);
+							console.log(str)
+							if (jSon.ecode==200) {
+								if (window.localStorage) {//支持数据检测
+									localStorage.setItem("loginname",jSon.data.loginuser.loginname);
+									localStorage.setItem("password",jSon.data.loginuser.password);
+								/*	window.location.href="index1.html"*/
+								}
+							}
+						}
+					});
+				}else{
+					$(".mot").show();
+					$(".warm").html("您输入的信息不正确")
+				}
+			})
+			$(".telnum").on("blur",function(){
+				num = $(".telnum").val()
+			 	nam = reg.test(num)
+			 	if (nam!=true) {
+			 		$(".mot").show();
+					$(".warm").html("手机号输入错误")
+			 	}
+			})
+			$(".pwd").on("blur",function(){
+				pwd = $(".pwd").val();
+			 	 pw = reg1.test(pwd);
+			 	if (pw!=true) {
+			 		$(".mot").show();
+					$(".warm").html("密码输入错误")
+			 	}
+			})
+			$(".ok").on("click",function(){
+				$(".mot").hide()
+			})
+				
+		})
+	</script>
+</html>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<style type="text/css">
+			html {
+				height: 100%;
+				background: #fff;
+				overflow: hidden;
+			}
+			
+			body {
+				margin: 0 auto;
+				width: 100%;
+				height: 100%;
+				max-width: 640px;
+				background: #CCCCCC;
+			}
+			
+			.left {
+				float: left;
+			}
+			
+			.header {
+				display: -webkit-box;
+				-webkit-box-align: center;
+				-webkit-box-pack: center;
+			}
+			
+			.sear {
+				width: 100%;
+				height: 34px;
+				background: white;
+				margin-bottom: 5px;
+				box-sizing: border-box;
+				padding: 4px 0 0 5px;
+			}
+			
+			.txt1 {
+				border: 1px solid #aaaaaa;
+				width: 83%;
+				height: 23px;
+				border-radius: 4px;
+			}
+			
+			.btn4 {
+				width: 14%;
+				height: 24px;
+				border: 1px solid #aaaaaa;
+				border-radius: 4px;
+				background: #0f91c5;
+				color: white;
+			}
+			
+			.con {
+				width: 100%;
+				overflow: hidden;
+			}
+			
+			.con .igno {
+				display: none;
+			}
+			
+			.name {
+				width: 100%;
+				height: 70px;
+				background: white;
+				box-sizing: border-box;
+				padding: 9px 0 0 11px;
+				border-bottom: 1px solid #aaaaaa;
+				position: relative;
+			}
+			
+			.name >.icon {
+				width: 49px;
+				height: 49px;
+				margin-right: 10px;
+				border-radius: 50%;
+				overflow: hidden;
+			}
+			
+			.name >.icon >img {
+				width: 100%;
+				height: auto;
+			}
+			
+			.introduce {
+				margin-right: 60px;
+				width: 60%;
+				padding-top: 7px;
+			}
+			
+			.on1 {
+				font-size: 14px;
+				margin-bottom: 4px;
+				width: 100%;
+				overflow: hidden;
+			}
+			
+			.on2 {
+				font-size: 12px;
+				color: #b4b4b4;
+				width: 100%;
+				overflow: hidden;
+			}
+			
+			.focus {
+				position: absolute;
+				right: 10px;
+				top: 20px;
+			}
+			
+			.click {
+				background: yellow;
+			}
+			
+			footer {
+				width: 100%;
+				height: 44px;
+				box-sizing: border-box;
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				border-top: 1px solid #E5E5E5;
+				background: #FFFFFF;
+			}
+			
+			footer >ul >li {
+				width: 20%;
+				height: 44px;
+				float: left;
+				font-size: 12px;
+				text-align: center;
+				box-sizing: border-box;
+				padding-top: 6px;
+			}
+			
+			footer >ul >li >a {
+				color: #cccccc;
+				height: 35px;
+				display: inline-block;
+			}
+			
+			footer >ul >li:nth-child(3) i {
+				font-size: 30px;
+			}
+			
+			footer >ul >li:nth-child(3) >a >div {
+				width: 44px;
+				height: 44px;
+				background: #fff;
+				border: 1px solid #E5E5E5;
+				border-radius: 50%;
+				margin: 0 auto;
+				text-align: center;
+				box-sizing: border-box;
+				padding-top: 7px;
+			}
+			
+			footer >ul >li:nth-child(3) {
+				padding: 0;
+				margin-top: -7px;
+			}
+			
+			section {
+				width: 100%;
+			}
+			
+			.active {
+				color: #0F91C5;
+			}
+			
+			footer ul li:nth-child(3) {
+				position: relative;
+			}
+			
+			.file {
+				position: absolute;
+				width: 44px;
+				height: 44px;
+				left: 0;
+				top: 0;
+				opacity: 0;
+			}
+		</style>
+		<title></title>
+	</head>
+
+	<body>
+		<header>
+			发现
+		</header>
+		<div class="sear">
+			<input type="text" class="txt1" placeholder="  请输入昵称" />
+			<input type="button" class="btn4" value="搜 索" />
+		</div>
+		<div id="scroll8">
+			<div class="con">
+			</div>
+		</div>
+
+		<footer>
+			<ul>
+				<li>
+					<a class="home" href="#">
+						<div><i class="iconfont">&#xe67c;</i></div>首页</a>
+				</li>
+				<li>
+					<a class="active discover" href="#">
+						<div><i class="iconfont">&#xf00d7;</i></div>发现</a>
+				</li>
+				<li>
+					<a href="#">
+						<div><i class="iconfont">&#xe60e;</i></div>
+						<input type="file" class="file" />
+					</a>
+				</li>
+				<li>
+					<a class="personal" href="#">
+						<div><i class="iconfont">&#xe631;</i></div>我的</a>
+				</li>
+				<li>
+					<a href="#">
+						<div><i class="iconfont">&#xe638;</i></div>退出</a>
+				</li>
+			</ul>
+		</footer>
+	</body>
+	<script type="text/javascript" src="js/iscroll.js"></script>
+	<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="js/touch-0.2.14.min.js"></script>
+	<script type="text/javascript">
+		window.onload = function() {
+			touch.on("footer >ul >li >a", "tap", function() {
+				$("footer >ul >li >a").removeClass("active");
+				$(this).addClass("active");
+			})
+			touch.on("footer >ul >li >a >.file", "tap", function(e) {
+				var ev = e || event;
+				ev.stopPropagation() ? e.stopPropagation() : e.cancelBubble = false;
+				$("footer >ul >li >a").removeClass("active");
+				$(this).parent().addClass("active");
+			})
+			touch.on(".discover", "tap", function() {
+				window.location.href = "discover.html";
+			})
+			touch.on(".personal", "tap", function() {
+				window.location.href = "personal.html";
+			})
+			touch.on(".home", "tap", function() {
+					window.location.href = "index1.html";
+				})
+			var hHeight = $("header").height(),
+				sHeight = $(".sear").height(),
+				wHeight = $(window).height(),
+				fHeight = $("footer").height();
+			var ifTop = 0;
+			var ifBot = 0;
+			var count = 1;
+			var scroll8 = new iScroll("scroll8", {
+				hScrollbar: false,
+				vScrollbar: false,
+				onScrollMove: function() {
+					console.log(this.maxScrollY);
+					if (this.y > 60) {
+						ifTop = 1;
+						ifBot = 0;
+					} else if (this.y < (this.maxScrollY - 60)) {
+						ifTop = 0;
+						ifBot = 1;
+					} else {
+						ifTop = 0;
+						ifBot = 0;
+					}
+				},
+				onScrollEnd: function() {
+					if (ifTop == 1) {
+						count = 1;
+						$(".name").remove();
+						Aja();
+					} else if (ifBot == 1) {
+						count++;
+						Aja();
+					}
+				}
+			})
+			$("#scroll8").height(wHeight - hHeight - sHeight - fHeight);
+			$(".btn4").on("tap", Aja);
+
+			function Aja() {
+				$.ajax({
+					type: "get",
+					data: {
+						"loginsuserid": 717,
+						"page.pageNo": count
+					},
+					url: "http://localhost:8080/Proxy/FootBall/user/json/queryall.do",
+					success: function(str) {
+						var dat = JSON.parse(str);
+						var b = dat.data.userlist;
+						var m;
+						if (dat.ecode == 200) {
+							for (var i = 0; i < b.length; i++) {
+								var list = $('<div class="name" id=' 
+								+ b[i].id
+								+ '><div class="icon left"><img  src="http://101.200.173.217:8080/FootBall'
+								+ b[i].avatarpath
+								+ ' " /></div><div class="introduce left"><p class="on1">'
+								+ b[i].nickname
+								+ '</p><p class="on2">'
+								+ b[i].signnature 
+								+ '</p></div><button class="focus click" >关注</button></div>');
+								list.appendTo(".con");
+							}
+							$(".name").delegate(".focus", "click", function(e) {
+								e.preventDefault();
+								alert($(this).parent(".name").attr("id"));
+								
+								$(this).removeClass("click");
+									var n =Number($(this).parent().attr('id'));
+									$.ajax({
+										type: "get",
+										data: {
+											"loginsuserid": 717,
+											"tagetuserid": n
+										},
+										url: "http://localhost:8080/Proxy/FootBall/attention/json/follow.do",
+										success: function(str) {
+											var jsOn = JSON.parse(str);
+											console.info(str);
+										}
+									});
+							});
+						}
+						scroll8.refresh();
+					}
+				});
+			}
+		}
+	</script>
+
+</html>

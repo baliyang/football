@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<style type="text/css">
+			html {
+				height: 100%;
+				background: #fff;
+				overflow: hidden;
+			}
+			
+			body {
+				margin: 0 auto;
+				width: 100%;
+				height: 100%;
+				max-width: 640px;
+				background: #CCCCCC;
+			}
+			
+			.left {
+				float: left;
+			}
+			
+			.header {
+				display: -webkit-box;
+				-webkit-box-align: center;
+				-webkit-box-pack: center;
+			}
+			
+			.sear {
+				width: 100%;
+				height: 34px;
+				background: white;
+				margin-bottom: 5px;
+				box-sizing: border-box;
+				padding: 4px 0 0 5px;
+			}
+			
+			.txt1 {
+				border: 1px solid #aaaaaa;
+				width: 83%;
+				height: 23px;
+				border-radius: 4px;
+			}
+			
+			.btn4 {
+				width: 14%;
+				height: 24px;
+				border: 1px solid #aaaaaa;
+				border-radius: 4px;
+				background: #0f91c5;
+				color: white;
+			}
+			
+			.name {
+				width: 100%;
+				height: 70px;
+				background: white;
+				box-sizing: border-box;
+				padding: 16px 0 0 11px;
+				border-bottom: 1px solid #aaaaaa;
+			}
+			
+			.name >.icon {
+				width: 49px;
+				height: 49px;
+				margin-right: 10px;
+			}
+			
+			.name >.icon >img {
+				width: 100%;
+				height: auto;
+				margin-top: -3px;
+			}
+			
+			.introduce {
+				margin-right: 60px;
+			}
+			
+			.on1 {
+				font-size: 14px;
+				margin-bottom: 10px;
+			}
+			
+			.on2 {
+				font-size: 12px;
+				color: #b4b4b4;
+			}
+			
+			nav {
+				width: 100%;
+				height: 34px;
+				background: white;
+				margin-bottom: 6px;
+			}
+			
+			nav >div >a.fir {
+				border-bottom: 3px solid #0f91c5;
+			}
+			
+			nav >div >a {
+				width: 33.3%;
+				height: 34px;
+				color: #b4b4b4;
+				display: inline-block;
+				font-size: 14px;
+				text-align: center;
+				line-height: 34px;
+				border-bottom: 1px solid #d9d9d9;
+				box-sizing: border-box;
+			}
+			
+			.photo {
+				width: 100%;
+				overflow: hidden;
+				background: white;
+			}
+			
+			.photo img {
+				width: 48%;
+				height: auto;
+				display: inline-block;
+				margin-left: 3px;
+			}
+			
+			footer {
+				width: 100%;
+				height: 44px;
+				box-sizing: border-box;
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				border-top: 1px solid #E5E5E5;
+				background: #FFFFFF;
+			}
+			
+			footer >ul >li {
+				width: 20%;
+				height: 44px;
+				float: left;
+				font-size: 12px;
+				text-align: center;
+				box-sizing: border-box;
+				padding-top: 6px;
+			}
+			
+			footer >ul >li >a {
+				color: #cccccc;
+				height: 35px;
+				display: inline-block;
+			}
+			
+			footer >ul >li:nth-child(3) i {
+				font-size: 30px;
+			}
+			
+			footer >ul >li:nth-child(3) >a >div {
+				width: 44px;
+				height: 44px;
+				background: #fff;
+				border: 1px solid #E5E5E5;
+				border-radius: 50%;
+				margin: 0 auto;
+				text-align: center;
+				box-sizing: border-box;
+				padding-top: 7px;
+			}
+			
+			footer >ul >li:nth-child(3) {
+				padding: 0;
+				margin-top: -7px;
+			}
+			
+			section {
+				width: 100%;
+			}
+			
+			.active {
+				color: #0F91C5;
+			}
+			
+			footer ul li:nth-child(3) {
+				position: relative;
+			}
+			
+			.file {
+				position: absolute;
+				width: 44px;
+				height: 44px;
+				left: 0;
+				top: 0;
+				opacity: 0;
+			}
+		</style>
+		<title></title>
+	</head>
+
+	<body>
+		<header>
+			个人中心
+		</header>
+		<div class="sear">
+			<input type="text" class="txt1" placeholder="  请输入昵称" />
+			<input type="button" class="btn4" value="搜 索" />
+		</div>
+		<div class="name">
+			<div class="icon left">
+				<img src="img/pic5.jpg" />
+			</div>
+			<div class="introduce left">
+				<p class="on1">我叫小萌</p>
+				<p class="on2">我是小萌我怕谁！哈哈哈哈！</p>
+			</div>
+		</div>
+		<nav>
+			<div>
+				<a href="#" class="fir">照片(1)</a><a href="#">关注(3)</a><a href="#">粉丝(8)</a>
+			</div>
+		</nav>
+		<section id="scroll5" class="scroll5">
+			<div class="photo">
+				<img src="img/pic.jpg" />
+				<img src="img/pic1.jpg" />
+				<img src="img/pic3.jpg" />
+				<img src="img/pic4.jpg" />
+				<img src="img/pic6.jpg" />
+				<img src="img/pic.jpg" />
+				<img src="img/pic1.jpg" />
+				<img src="img/pic3.jpg" />
+				<img src="img/pic4.jpg" />
+				<img src="img/pic6.jpg" />
+				<img src="img/pic.jpg" />
+				<img src="img/pic1.jpg" />
+				<img src="img/pic3.jpg" />
+				<img src="img/pic4.jpg" />
+				<img src="img/pic6.jpg" />
+				<img src="img/pic.jpg" />
+				<img src="img/pic1.jpg" />
+				<img src="img/pic3.jpg" />
+				<img src="img/pic4.jpg" />
+				<img src="img/pic6.jpg" />
+				<img src="img/pic.jpg" />
+				<img src="img/pic1.jpg" />
+				<img src="img/pic3.jpg" />
+				<img src="img/pic4.jpg" />
+				<img src="img/pic6.jpg" />
+			</div>
+		</section>
+
+		<section id="scroll6" class="scroll5">
+			<div class="photo">
+				<img src="img/pic1.jpg" />
+				<img src="img/pic1.jpg" />
+				<img src="img/pic3.jpg" />
+				<img src="img/pic4.jpg" />
+				<img src="img/pic6.jpg" />
+				<img src="img/pic.jpg" />
+				<img src="img/pic1.jpg" />
+				<img src="img/pic3.jpg" />
+				<img src="img/pic4.jpg" />
+				<img src="img/pic6.jpg" />
+				<img src="img/pic.jpg" />
+				<img src="img/pic1.jpg" />
+				<img src="img/pic3.jpg" />
+				<img src="img/pic4.jpg" />
+				<img src="img/pic6.jpg" />
+				<img src="img/pic.jpg" />
+				<img src="img/pic1.jpg" />
+				<img src="img/pic3.jpg" />
+				<img src="img/pic4.jpg" />
+				<img src="img/pic6.jpg" />
+				<img src="img/pic.jpg" />
+				<img src="img/pic1.jpg" />
+				<img src="img/pic3.jpg" />
+				<img src="img/pic4.jpg" />
+				<img src="img/pic6.jpg" />
+			</div>
+		</section>
+		<section id="scroll7" class="scroll5">
+			<div class="photo">
+				<img src="img/pic3.jpg" />
+				<img src="img/pic4.jpg" />
+				<img src="img/pic6.jpg" />
+				<img src="img/pic.jpg" />
+				<img src="img/pic1.jpg" />
+				<img src="img/pic3.jpg" />
+				<img src="img/pic4.jpg" />
+				<img src="img/pic6.jpg" />
+				<img src="img/pic.jpg" />
+				<img src="img/pic1.jpg" />
+				<img src="img/pic3.jpg" />
+				<img src="img/pic4.jpg" />
+				<img src="img/pic6.jpg" />
+				<img src="img/pic.jpg" />
+				<img src="img/pic1.jpg" />
+				<img src="img/pic3.jpg" />
+				<img src="img/pic4.jpg" />
+				<img src="img/pic6.jpg" />
+				<img src="img/pic.jpg" />
+				<img src="img/pic1.jpg" />
+				<img src="img/pic3.jpg" />
+				<img src="img/pic4.jpg" />
+				<img src="img/pic6.jpg" />
+			</div>
+		</section>
+
+		<footer>
+			<ul>
+				<li>
+					<a class="home" href="#">
+						<div><i class="iconfont">&#xe67c;</i></div>首页</a>
+				</li>
+				<li>
+					<a class="discover" href="#">
+						<div><i class="iconfont">&#xf00d7;</i></div>发现</a>
+				</li>
+				<li>
+					<a href="#">
+						<div><i class="iconfont">&#xe60e;</i></div>
+						<input type="file" class="file" />
+					</a>
+				</li>
+				<li>
+					<a class="personal active" href="#">
+						<div><i class="iconfont">&#xe631;</i></div>我的</a>
+				</li>
+				<li>
+					<a href="#">
+						<div><i class="iconfont">&#xe638;</i></div>退出</a>
+				</li>
+			</ul>
+		</footer>
+	</body>
+	<script type="text/javascript" src="js/iscroll.js"></script>
+	<script type="text/javascript" src="js/zepto.min.js"></script>
+	<script type="text/javascript" src="js/touch-0.2.14.min.js"></script>
+	<script type="text/javascript">
+		window.onload = function() {
+			touch.on("nav >div >a","tap",function(){
+				$("nav >div >a").removeClass("fir");
+				var $inde = $(this).index();
+				$(".scroll5").hide();
+				$(".scroll5").eq($inde).show();
+				$(this).addClass("fir");
+			})
+			touch.on("footer >ul >li >a","tap",function(){
+				$("footer >ul >li >a").removeClass("active")
+				$(this).addClass("active");
+			})
+			touch.on("footer >ul >li >a >.file","tap",function(e){
+				var ev = e || event;
+				ev.stopPropagation() ? e.stopPropagation():e.cancelBubble = false;
+				$("footer >ul >li >a").removeClass("active");
+				$(this).parent().addClass("active");
+			})
+			var scroll5, scroll6, scroll7;
+			var wHeight = $(window).height();
+			var hHeight = $("header").height();
+			var fHeight = $("footer").height();
+			var naHeight = $(".name").height();
+			var seaHeight = $(".sear").height();
+			var nHeight = $("nav").height();
+			scroll5 = new iScroll("scroll5", {
+				hScrollbar: false,
+				vScrollbar: false
+			})
+			scroll6 = new iScroll("scroll6", {
+				hScrollbar: false,
+				vScrollbar: false
+			})
+			scroll7 = new iScroll("scroll7", {
+				hScrollbar: false,
+				vScrollbar: false
+			})
+			$(".scroll5").height(wHeight - hHeight - fHeight - seaHeight - naHeight - nHeight - 6);
+			scroll5.refresh();
+			scroll6.refresh();
+			scroll7.refresh();
+			touch.on(".discover","tap",function(){
+				window.location.href = "discover.html";
+			})
+			touch.on(".personal","tap",function(){
+				window.location.href = "personal.html";
+			})
+			touch.on(".home","tap",function(){
+				window.location.href = "index1.html";
+			})
+		}
+	</script>
+
+</html>
